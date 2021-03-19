@@ -1,1 +1,41 @@
-{% comment %} This will be the base file. {% endcomment %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<meta charset="UTF-8">
+
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="../static/styles.css" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/bamboo.css">
+
+<title>NPC Builder</title>
+
+<body>
+  
+    <div class="wrapper">
+
+        <header class="header"><h1>Header</h1></header>
+        
+        <nav class="nav">
+            <ul>
+                <li><a href="">Nav item 1</a></li>
+                <li><a href="">Nav item 2</a></li>
+                <li><a href="">Nav item 3</a></li>
+            </ul>
+        </nav>
+
+        <article class="content">
+            {% block content %}
+            {% endblock content %}
+        </article>
+
+        <aside class="side">Sidebar</aside>
+
+        <footer class="footer">Footer</footer>
+
+    </div>
+
+</body>
+
+</html>
