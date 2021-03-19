@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Places</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Place Types</th>
+            <th>Descriptions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in place_type_list %}
+        <tr>
+            <td>{{ t.type_name }}</td>
+            <td>{{ t.type_description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
