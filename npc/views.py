@@ -13,4 +13,6 @@ def place_type(request):
     place_type_list=PlaceType.objects.all()
     return render(request, 'npc/placetypes.html' ,{'place_type_list' : place_type_list})
 
- 
+def person(request):
+     people_list = Person.objects.all()
+     return render(request, 'npc/person.html', {'people_list' : people_list})

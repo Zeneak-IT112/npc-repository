@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>NPCs</h2>
+<table>
+    <thead>
+        <tr>
+            <th>NPCs</th>
+            <th>Descriptions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in people_list %}
+        <tr>
+            <td>{{ t.name }}</td>
+            <td>{{ t.person_type}}</td>
+            <td>{{ t.description }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
