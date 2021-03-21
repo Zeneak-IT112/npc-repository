@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+<h2>{{place_details.name}}</h2>
+<table>
+    
+    <tbody>
+        <tr>
+            <td>Place:</td>
+            <td>{{place_details.name}}</td>
+        </tr>
+        <tr>
+            <td>Place Type:</td>
+            <td>{{place_details.place_type}}</td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>{{place_details.description}}</td>
+        </tr>  
+    </tbody>
+</table>
+ 
+ 
+{% endblock %}

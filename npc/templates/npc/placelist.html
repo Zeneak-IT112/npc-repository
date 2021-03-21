@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Places</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Places</th>
+            <th>Place Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in place_list %}
+        <tr>
+            <td><a href="{% url 'placedetails' id=t.id %}">{{ t.name }}</a></td>
+            <td>{{ t.place_type}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

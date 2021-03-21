@@ -20,3 +20,11 @@ def person_list(request):
 def person_details(request, id):
     person_details = get_object_or_404(Person, pk=id)
     return render(request, 'npc/persondetails.html', {'person_details': person_details})
+
+def place_list(request):
+    place_list = Place.objects.all()
+    return render(request, 'npc/placelist.html', {'place_list' : place_list})
+
+def place_details(request, id):
+    place_details =get_object_or_404(Place, pk=id)
+    return render(request, 'npc/placedetails.html', {'place_details' : place_details})

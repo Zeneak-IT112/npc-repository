@@ -7,4 +7,6 @@ urlpatterns=[
     path('placetypes/', views.place_type, name='placetypes'),
     path('personlist/', views.person_list, name='personlist'),
     path('persondetails/<int:id>', views.person_details, name='persondetails'),
+    path('placelist/', views.place_list, name='placelist'),
+    path('placedetails/<int:id>', views.place_details, name='placedetails'),
 ]
