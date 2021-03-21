@@ -6,15 +6,14 @@
     <thead>
         <tr>
             <th>NPCs</th>
-            <th>Descriptions</th>
+            <th>NPC Type</th>
         </tr>
     </thead>
     <tbody>
         {% for t in people_list %}
         <tr>
-            <td>{{ t.name }}</td>
+            <td><a href="{% url 'persondetails' id=t.id %}">{{ t.name }}</a></td>
             <td>{{ t.person_type}}</td>
-            <td>{{ t.description }}</td>
         </tr>
         {% endfor %}
     </tbody>
