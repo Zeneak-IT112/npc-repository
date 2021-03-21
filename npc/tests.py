@@ -60,15 +60,13 @@ class IndexTest(TestCase):
         response = self.client.get(reverse('index'))
         self.assertEqual(response.status_code, 200)
 
-#fix me, tests are failing.
-"""class PersonDetailsViewTest(TestCase):
+class PersonDetailsViewTest(TestCase):
     def setUp(self):
-        self.apersontype = PersonType(type_name='wizard', type_description='hoarding all the XP')
-        self.aperson = Person(  name='Tom Bombadil', 
-                                person_type=self.apersontype,
+        self.test_person_type = PersonType.objects.create(type_name='wizard', type_description='hoarding all the XP')
+        self.test_person = Person.objects.create(name='Tom Bombadil', 
+                                person_type=self.test_person_type,
                                 description='lived in a forest and didn\'t make the cut for the movie')
 
     def test_person_detail_success(self):
-        response = self.client.get(reverse('persondetails/', args=(self.aperson.id)))
+        response = self.client.get(reverse('persondetails', args=(self.test_person.id,)))
         self.assertEqual(response.status_code, 200)
-"""
