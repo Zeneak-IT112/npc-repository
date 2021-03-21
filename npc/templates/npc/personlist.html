@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>NPCs</h2>
+<table>
+    <thead>
+        <tr>
+            <th>NPCs</th>
+            <th>NPC Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for t in people_list %}
+        <tr>
+            <td><a href="{% url 'persondetails' id=t.id %}">{{ t.name }}</a></td>
+            <td>{{ t.person_type}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

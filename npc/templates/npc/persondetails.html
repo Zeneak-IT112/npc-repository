@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{person_details.name}}</h2>
+<table>
+    <tbody>
+        <tr>
+            <td>Name:</td>
+            <td>{{person_details.name}}</td>
+        </tr>
+        <tr>
+            <td>NPC Type:</td>
+            <td>{{person_details.person_type}}</td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td>{{person_details.description}}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
