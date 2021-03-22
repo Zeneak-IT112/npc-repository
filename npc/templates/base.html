@@ -4,8 +4,6 @@
 
 <html lang="en">
 
-<meta charset="UTF-8">
-
 <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="{% static 'npc/styles.css' %}">
@@ -17,9 +15,17 @@
   
     <div class="wrapper">
 
-        <header class="header"><h1>GM Resources</h1></header>
+        <header class="header"><a href="{% url 'index' %}" id="headerlink"><h1>GM Resources</h1></a></header>
         
+        <aside class="side">
+            <p>
+                <a href="https://github.com/Zeneak-IT112/npc-repository">Repo</a> |
+                Login
+            </p>
+        </aside>
+
         <nav class="nav">
+            <h2></h2>
             <ul>
                 <li><a href="{% url 'persontypes' %}">Person Types</a></li>
                 <li><a href="{% url 'placetypes' %}">Place Types</a></li>
@@ -33,15 +39,10 @@
             {% endblock content %}
         </article>
 
-        <aside class="side">
-            <ul>
-                <li><a href="https://github.com/Zeneak-IT112/npc-repository">Repo</a></li>
-                <li>Login</li>
-            </ul>
-        </aside>
-
         <footer class="footer">
-            Created by <a href="https://github.com/gedeguz007">Gabe</a>, <a href="https://github.com/cavinginrainbows">Lewis</a>, and <a href="https://github.com/Zeneak">Z</a>.
+            <p>
+                Created by <a href="https://github.com/gedeguz007">Gabe</a>, <a href="https://github.com/cavinginrainbows">Lewis</a>, and <a href="https://github.com/Zeneak">Z</a>.
+            </p>
         </footer>
 
     </div>
