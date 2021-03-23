@@ -1,7 +1,9 @@
 from django.test import TestCase
 from django.urls import reverse
+from .forms import PlaceForm, PersonForm
 from .models import Person, Place, PersonType, PlaceType
 from .views import *
+from  django import forms
 
 # Create your tests here.
 class PersonTypeTest(TestCase):
@@ -71,4 +73,19 @@ class PersonDetailsViewTest(TestCase):
         response = self.client.get(reverse('persondetails', args=(self.test_person.id,)))
         self.assertEqual(response.status_code, 200)
 
-#updated
+class NewPersonFormTest(TestCase):
+    
+    def test_form_is_valid(self):
+        data = {'name': "Sombra", 'person_type' : 'wizard', 'description' : "mage"}
+        form = PersonForm(data)
+        self.assertTrue(form.is_valid)
+
+class NewPlaceFormTest(TestCase):
+
+    
+    
+    def test_form_is_valid(self):
+        placeType1 = PlaceType.objects.create(type_name = 'tavern', type_description = 'bar')
+        data = {'name': "Embers", 'place_type' : [str(placeType1.id)], 'description' : "drinks"}
+        form = PlaceForm(data)
+        self.assertTrue(form.is_valid)

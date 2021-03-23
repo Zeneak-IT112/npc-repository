@@ -1,16 +1,17 @@
 from .models import Person, PersonType, Place, PlaceType
 from django.shortcuts import render, get_object_or_404
+from .forms import PersonForm, PlaceForm
 
 # Create your views here.
 def index (request):
     return render(request, 'npc/index.html')
 
 def person_type(request):
-    person_type_list=PersonType.objects.all()
+    person_type_list = PersonType.objects.all()
     return render(request, 'npc/persontypes.html' ,{'person_type_list' : person_type_list})
 
 def place_type(request):
-    place_type_list=PlaceType.objects.all()
+    place_type_list = PlaceType.objects.all()
     return render(request, 'npc/placetypes.html' ,{'place_type_list' : place_type_list})
 
 def person_list(request):
@@ -26,5 +27,29 @@ def place_list(request):
     return render(request, 'npc/placelist.html', {'place_list' : place_list})
 
 def place_details(request, id):
-    place_details =get_object_or_404(Place, pk=id)
+    place_details = get_object_or_404(Place, pk=id)
     return render(request, 'npc/placedetails.html', {'place_details' : place_details})
+
+def newPerson(request):
+     form = PersonForm
+     if request.method == 'POST':
+          form = PersonForm(request.POST)
+          if form.is_valid():
+               post = form.save(commit=True)
+               post.save()
+               form = PersonForm()
+     else:
+          form = PersonForm()
+     return render(request, 'npc/newperson.html', {'form': form})
+
+def newPlace(request):
+     form = PlaceForm
+     if request.method == 'POST':
+          form = PlaceForm(request.POST)
+          if form.is_valid():
+               post = form.save(commit=True)
+               post.save()
+               form = PlaceForm()
+     else:
+          form = PlaceForm()
+     return render(request, 'npc/newplace.html', {'form': form})
