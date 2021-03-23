@@ -11,4 +11,6 @@ urlpatterns=[
     path('placedetails/<int:id>', views.place_details, name = 'placedetails'),
     path('newperson/', views.newPerson, name = 'newperson'),
     path('newplace/', views.newPlace, name = 'newplace'),
+    path('loginmessage/', views.loginmessage, name='loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
 ]
