@@ -1,6 +1,8 @@
-from .models import Person, PersonType, Place, PlaceType
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
 from .forms import PersonForm, PlaceForm
+from .models import Person, PersonType, Place, PlaceType
 
 # Create your views here.
 def index (request):
@@ -30,6 +32,7 @@ def place_details(request, id):
     place_details = get_object_or_404(Place, pk=id)
     return render(request, 'npc/placedetails.html', {'place_details' : place_details})
 
+@login_required
 def newPerson(request):
      form = PersonForm
      if request.method == 'POST':
@@ -42,6 +45,7 @@ def newPerson(request):
           form = PersonForm()
      return render(request, 'npc/newperson.html', {'form': form})
 
+@login_required
 def newPlace(request):
      form = PlaceForm
      if request.method == 'POST':
@@ -53,3 +57,9 @@ def newPlace(request):
      else:
           form = PlaceForm()
      return render(request, 'npc/newplace.html', {'form': form})
+
+def loginmessage(request):
+     return render(request, 'npc/loginmessage.html')
+
+def logoutmessage(request):
+     return render(request, 'npc/logoutmessage.html')

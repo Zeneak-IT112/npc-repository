@@ -19,8 +19,9 @@
         
         <aside class="side">
             <p>
-                <a href="https://github.com/Zeneak-IT112/npc-repository">Repo</a> |
-                Login
+                <a href="https://github.com/Zeneak-IT112/npc-repository">Repo</a> <br>
+                <a href="{% url 'login' %}">Login</a> |
+                <a href="{% url 'logout' %}">Logout</a>
             </p>
         </aside>
 
@@ -32,7 +33,7 @@
                 <li><a href="{% url 'personlist' %}">NPCs</a></li>
                 <li><a href="{% url 'placelist' %}">Places</a></li>
                 <li><a href="{% url 'newperson' %}">Add NPC</a></li>
-                <li><a href="{% url 'newplace' %}">ADD Place</a></li>
+                <li><a href="{% url 'newplace' %}">Add Place</a></li>
             </ul>
         </nav>
 
