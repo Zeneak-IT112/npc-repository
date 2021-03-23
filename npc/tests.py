@@ -70,3 +70,5 @@ class PersonDetailsViewTest(TestCase):
     def test_person_detail_success(self):
         response = self.client.get(reverse('persondetails', args=(self.test_person.id,)))
         self.assertEqual(response.status_code, 200)
+
+#updated
